@@ -20,6 +20,20 @@ public class LineComparisonOOP {
         length_of_line = Math.sqrt( (x2 - x1) * (x2 - x1)  + (y2- y1) * (y2- y1) );
         return Math.round(length_of_line * 100.0)/100.0;
     }
+
+    // Overriding equals() Method
+    public boolean equals(LineComparisonOOP Line_2)
+    {	boolean equalityValue;
+
+        if(this.lengthOfLine() == Line_2.lengthOfLine())
+            equalityValue = true;
+        else
+            equalityValue = false;
+
+        return equalityValue;
+    }
+
+
     public class LineComparison {
         public static void main(String[] args) {
             System.out.println( "Welcome to Line Comparison Computation OOP Program" );
@@ -40,7 +54,28 @@ public class LineComparisonOOP {
 
             System.out.println("length of line 1 is "+Line_1.lengthOfLine() );
             System.out.println("length of line 2 is "+Line_2.lengthOfLine() );
+
+            boolean equality_check = Line_1.equals(Line_2);
+
+            // Display if Two are Equal or Not Equal
+            if(equality_check)
+                System.out.println("Lines are Equal");
+            else
+                System.out.println("Lines are Not Equal");
+
+            if(comparison==0)
+            {
+                System.out.println("Length of Line1 = "+len1+" is equal to Length of Line2 = "+len2);
+            }
+            else if(comparison<0)
+            {
+                System.out.println("Length of Line1 = "+len1+" is less than to Length of Line2 = "+len2);
+            }
+            else
+            {
+                System.out.println("Length of Line1 = "+len1+" is greater than to Length of Line2 = "+len2);
+            }
         }
+
     }
 
-} 
