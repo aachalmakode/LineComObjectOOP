@@ -33,6 +33,18 @@ public class LineComparisonOOP {
         return equalityValue;
     }
 
+    // Overriding compareTo() Method
+    public int compareTo(LineComparisonOOP Line_2) {
+        int compareValue;
+
+        if(this.lengthOfLine() == Line_2.lengthOfLine())
+            compareValue = 0;
+        else if(this.lengthOfLine() > Line_2.lengthOfLine())
+            compareValue = 1;
+        else compareValue = -1;
+
+        return compareValue;
+    }
 
     public class LineComparison {
         public static void main(String[] args) {
@@ -75,7 +87,16 @@ public class LineComparisonOOP {
             {
                 System.out.println("Length of Line1 = "+len1+" is greater than to Length of Line2 = "+len2);
             }
+
+            // Display of Comparison of Two lines
+            if (compare_value > 0)
+                System.out.println("Length of Line 1 is greater than Line 2");
+            else if (compare_value < 0)
+                System.out.println("Length of Line 1 is less than Line 2");
+
         }
 
     }
+
+
 
